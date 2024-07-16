@@ -486,7 +486,7 @@ G2dSolid(PixmapPtr pPixmap, int x1, int y1, int x2, int y2) {
     TRACE_EXA("%s (%d,%d,%d,%d) w:%d h:%d format:%d clrcolor:%x planemask:%x hwMask:%x",
                 __FUNCTION__,x1,y1,x2,y2,x2-x1,y2-y1,
                 pBlt->mDstSurfInfo.mFormat.mG2dFmt,
-                pBlt->mColorARGB32,pBlt->mPlaneMask,pBlt->hwMask);
+                (unsigned int)(pBlt->mColorARGB32),(unsigned int)pBlt->mPlaneMask,pBlt->hwMask);
     TRACE_EXA("%s dst VivPixmap:%p bpp:%d cpubusy:%d mHWPath:%d w:%d h:%d",
             __FUNCTION__,pVivPixDst,pBlt->mDstSurfInfo.mFormat.mBpp,
              pVivPixDst->mCpuBusy,pVivPixDst->mHWPath,
